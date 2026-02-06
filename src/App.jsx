@@ -1,92 +1,92 @@
 import React, { useState } from 'react'
 import { motion } from 'framer-motion'
 import {
-  Users,
   Package,
   Truck,
-  MapPin,
   Clock,
   ChevronRight,
   CheckCircle2,
-  Video,
   ExternalLink,
-  ChevronDown
+  ChevronDown,
+  Bike,
+  ScanBarcode,
+  Smartphone
 } from 'lucide-react'
 
 const positions = [
   {
     id: 1,
-    title: "Nhân viên Phát triển thị trường tại Bưu cục",
-    description: "Cầu nối quan trọng giữa GHN và các chủ shop, thúc đẩy doanh số và mở rộng mạng lưới.",
+    title: "Nhân viên Phát triển thị trường (NVPTTT)",
+    description: "Cầu nối giữa GHN và khách hàng, thúc đẩy doanh số tại khu vực.",
     bullets: [
-      "Tìm kiếm và tiếp cận các khách hàng tiềm năng",
-      "Tư vấn giải pháp vận chuyển tối ưu cho chủ shop",
-      "Xây dựng mối quan hệ bền vững với khách hàng",
-      "Trải nghiệm trực tiếp kỹ năng đàm phán và thuyết phục"
+      "Hiểu quy trình làm việc thực tế của NVPTTT tại bưu cục",
+      "Trải nghiệm giao hàng, xử lý POD, COD và bàn giao hàng hóa",
+      "Nắm được cách vận hành đơn hàng từ góc nhìn thị trường",
+      "Hiểu rõ vai trò NVPTTT trong chuỗi vận hành và chăm sóc khách hàng"
     ],
     videoPath: "",
     images: ["/NVPTTT ngang.png", "/NVPTTT dọc.png", "/NVPTTT dọc (1).png"],
-    icon: <Users className="w-6 h-6" />,
+    icon: <Bike className="w-8 h-8" />,
     color: "from-orange-500 to-orange-600"
   },
   {
     id: 2,
-    title: "Nhân viên xử lý tại Bưu cục",
-    description: "Trái tim của bưu cục, đảm bảo mọi đơn hàng được xử lý chính xác và nhanh chóng.",
+    title: "Nhân viên Xử lý (NVXL)",
+    description: "Nhân sự then chốt đảm bảo hàng hóa được xử lý chính xác tại bưu cục.",
     bullets: [
-      "Tiếp nhận và kiểm tra hàng hóa từ khách hàng",
-      "Phân loại và đóng gói hàng theo tiêu chuẩn",
-      "Quản lý dữ liệu trên hệ thống vận hành",
-      "Tối ưu hóa quy trình luân chuyển hàng hóa"
+      "Hiểu quy trình xử lý hàng giao, hàng lấy và hàng trả",
+      "Nắm được giờ xuất – nhập hàng và quy trình nhận tải, lên tải",
+      "Biết cách xử lý các tình huống hàng hóa gặp vấn đề",
+      "Trải nghiệm nhịp độ vận hành thực tế tại bưu cục"
     ],
     videoPath: "",
     images: ["/NVXL ngang.png", "/NVXL dọc.png", "/NVXL dọc (1).png"],
-    icon: <Package className="w-6 h-6" />,
+    icon: <ScanBarcode className="w-8 h-8" />,
     color: "from-red-500 to-red-600"
   },
   {
     id: 3,
-    title: "Nhân viên phân hàng tại Trung tâm trung chuyển",
-    description: "Chứng kiến quy mô khổng lồ của 'siêu kho' GHN với cường độ xử lý hàng trăm nghìn đơn mỗi ngày.",
+    title: "Nhân viên Phân hàng (Trung tâm Trung chuyển - TTTC)",
+    description: "Đóng vai trò trung tâm trong luồng di chuyển hàng hóa toàn hệ thống.",
     bullets: [
-      "Vận hành hệ thống băng tải tự động hiện đại",
-      "Phân loại hàng hóa theo tuyến khu vực",
-      "Đảm bảo tiến độ luân chuyển hàng liên tỉnh",
-      "Trải nghiệm áp lực và kỷ luật trong kho lớn"
+      "Hiểu tổng quan vận hành và các luồng hàng tại TTTC",
+      "Nắm được giờ xuất – nhập và cut-off time của kho",
+      "Hiểu năng suất xử lý hàng nhỏ và hàng nặng",
+      "Trải nghiệm hành trình đơn hàng tại TTTC như một Freelancer"
     ],
     videoPath: "",
     images: ["/NVPH ngang.png", "/NVPH dọc.png", "/NVPH dọc (1).png"],
-    icon: <MapPin className="w-6 h-6" />,
+    icon: <Package className="w-8 h-8" />,
     color: "from-blue-600 to-blue-700"
   },
   {
     id: 4,
-    title: "Nhân viên Giao Xe Tải tại kho Giao Xe Tải",
-    description: "Mắt xích quan trọng trong chuỗi cung ứng logistics đường dài.",
+    title: "Nhân viên Giao Xe Tải (NV GXT)",
+    description: "Đảm bảo vận chuyển hàng số lượng lớn đúng thời gian và lộ trình.",
     bullets: [
-      "Điều phối và kiểm soát hàng hóa lên xe tải",
-      "Sắp xếp lộ trình vận chuyển tối ưu",
-      "Giám sát quá trình bốc xếp hàng hóa",
-      "Quản lý an toàn và tiến độ xe lăn bánh"
+      "Hiểu quy trình làm việc một ngày của NV GXT",
+      "Nắm cách kiểm tra chuyến đi và đơn hàng được phân công",
+      "Thực hiện chụp POD cho các trạng thái giao hàng",
+      "Hiểu quy trình COD và bàn giao hàng hóa sau chuyến đi"
     ],
     videoPath: "",
     images: ["/NV GXT ngang.png", "/NV GXT dọc.png", "/NV GXT dọc (1).png"],
-    icon: <Truck className="w-6 h-6" />,
+    icon: <Truck className="w-8 h-8" />,
     color: "from-orange-600 to-orange-700"
   },
   {
     id: 5,
-    title: "Nhân viên Giao nhận Ahamove",
-    description: "Trải nghiệm sự linh hoạt và tốc độ của dịch vụ giao hàng tức thì.",
+    title: "Tài xế Ahamove",
+    description: "Lực lượng giao nhận linh hoạt trong mô hình logistics công nghệ.",
     bullets: [
-      "Tiếp nhận và xử lý đơn hàng hỏa tốc",
-      "Tối ưu hóa hành trình di chuyển trong phố",
-      "Tương tác trực tiếp với người mua và người bán",
-      "Học cách quản lý thời gian và chăm sóc khách hàng"
+      "Hiểu quy trình đăng ký và onboarding tài xế Ahamove",
+      "Trải nghiệm nhận – giao đơn hàng qua ứng dụng tài xế",
+      "Nắm rõ các bước hoàn tất một đơn giao hàng",
+      "Hiểu cách vận hành thực tế của mô hình giao hàng công nghệ"
     ],
     videoPath: "",
     images: ["/Ahamove ngang.png", "/Ahamove dọc.png", "/Ahamove dọc (1).png"],
-    icon: <Clock className="w-6 h-6" />,
+    icon: <Smartphone className="w-8 h-8" />,
     color: "from-emerald-600 to-emerald-700"
   }
 ]
@@ -112,10 +112,8 @@ function App() {
       {/* Navbar */}
       <nav className="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-4 h-20 flex items-center justify-between">
-          <div className="flex items-center gap-6">
-            <img src="/logo1.png" alt="GHN Logo" className="h-10 w-auto object-contain" />
-            <div className="w-[1px] h-8 bg-gray-200" />
-            <img src="/logo2.png" alt="Program Logo" className="h-9 w-auto object-contain" />
+          <div className="flex items-center">
+            <img src="/logo3.png" alt="GHN Logo" className="h-12 w-auto object-contain" />
           </div>
           <button
             onClick={scrollToForm}
@@ -367,10 +365,8 @@ function App() {
       {/* Footer */}
       <footer className="py-20 px-4 bg-white text-center text-gray-500 border-t border-gray-100">
         <div className="max-w-7xl mx-auto flex flex-col items-center gap-10">
-          <div className="flex items-center gap-6">
-            <img src="/logo1.png" alt="GHN Footer" className="h-10 opacity-80" />
-            <div className="w-[1px] h-6 bg-gray-200" />
-            <img src="/logo2.png" alt="Program Footer" className="h-9 opacity-80" />
+          <div className="flex items-center">
+            <img src="/logo3.png" alt="GHN Footer" className="h-12 opacity-90 object-contain" />
           </div>
           <div className="space-y-2">
             <p className="text-ghn-dark font-black text-xl uppercase tracking-tighter italic">Giao Hàng Nhanh - Trải Nghiệm Vận Hành</p>
