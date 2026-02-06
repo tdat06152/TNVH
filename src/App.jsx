@@ -114,7 +114,7 @@ function App() {
       <nav className="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-4 h-20 flex items-center justify-between">
           <div className="flex items-center">
-            <img src="/logo3.png" alt="GHN Logo" className="h-12 w-auto object-contain" />
+            <img src="/logo3.png" alt="GHN Logo" className="h-16 w-auto object-contain" />
           </div>
           <button
             onClick={scrollToForm}
@@ -367,11 +367,14 @@ function App() {
       <footer className="py-20 px-4 bg-white text-center text-gray-500 border-t border-gray-100">
         <div className="max-w-7xl mx-auto flex flex-col items-center gap-10">
           <div className="flex items-center">
-            <img src="/logo3.png" alt="GHN Footer" className="h-12 opacity-90 object-contain" />
+            <img src="/logo3.png" alt="GHN Footer" className="h-16 opacity-90 object-contain" />
           </div>
           <div className="space-y-2">
             <p className="text-ghn-dark font-black text-xl uppercase tracking-tighter italic">Giao Hàng Nhanh - Trải Nghiệm Vận Hành</p>
             <p className="max-w-xl text-lg font-medium">Bản quyền thuộc về Bộ phận Học tập và Phát triển GHN. <br />"Thấu hiểu vận hành - Đồng lòng bứt phá."</p>
+          </div>
+          <div className="mt-8 py-2 px-6 rounded-xl bg-gray-50 border border-gray-100 inline-block">
+            <p className="text-sm font-semibold text-gray-400 italic">Sản phẩm được thực hiện bởi ĐạtTT LnD</p>
           </div>
           <div className="h-4" />
         </div>
